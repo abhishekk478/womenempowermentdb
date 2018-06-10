@@ -26,21 +26,11 @@ if (isset($_GET["email"]) && isset($_GET["pass"])) {
     if (!empty($result)) {
         // check for empty result
         if (mysqli_num_rows($result) > 0) {
- 
-            $result = mysqli_fetch_array($result);
- 
-            $user = array();
-            $user["email"] = $result["email"];
-            $user["name"] = $result["name"];
-            
+             
             // success
             $response["success"] = 1;
- 
-            // user node
-            $response["user"] = array();
- 
-            array_push($response["user"], $user);
- 
+            $response["message"] = "Login successfully.";
+            
             // echoing JSON response
             echo json_encode($response);
         } else {
