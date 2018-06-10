@@ -35,7 +35,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['pass']) && 
     $db = new DB_CONNECT();
  
     // mysql inserting a new row
-    $result = mysql_query("INSERT INTO register(name, email, pass, address, state, pin, std, mobile, qualification, skills, experience) VALUES('$name', '$email', '$pass', '$address', '$state', '$pin', '$std', '$mobile', '$qualification', '$skills', '$experience')");
+    $result = mysqli_query("INSERT INTO register(name, email, pass, address, state, pin, std, mobile, qualification, skills, experience) VALUES('$name', '$email', '$pass', '$address', '$state', '$pin', '$std', '$mobile', '$qualification', '$skills', '$experience')");
  
     // check if row inserted or not
     if ($result) {
