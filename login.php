@@ -21,13 +21,13 @@ if (isset($_GET["email"]) && isset($_GET["pass"])) {
     $pass = $_GET['pass'];
  
     // get a product from products table
-    $result = mysql_query("SELECT *FROM register WHERE email = $email AND pass = $pass");
+    $result = mysqli_query("SELECT *FROM register WHERE email = $email AND pass = $pass");
  
     if (!empty($result)) {
         // check for empty result
-        if (mysql_num_rows($result) > 0) {
+        if (mysqli_num_rows($result) > 0) {
  
-            $result = mysql_fetch_array($result);
+            $result = mysqli_fetch_array($result);
  
             $user = array();
             $user["email"] = $result["email"];
